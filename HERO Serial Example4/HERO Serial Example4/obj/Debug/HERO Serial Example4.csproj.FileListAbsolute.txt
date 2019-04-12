@@ -1,0 +1,18 @@
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\le\HERO Serial Example.exe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\be\HERO Serial Example.exe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\le\HERO Serial Example.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\be\HERO Serial Example.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\HERO Serial Example.exe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\HERO Serial Example.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\le\HERO Serial Example.pe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\le\HERO Serial Example.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\be\HERO Serial Example.pe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\bin\Debug\be\HERO Serial Example.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\HERO Serial Example4.csprojResolveAssemblyReference.cache
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\TinyCLR_DebugReferences.cache
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\HERO Serial Example.exe
+c:\users\hannah\documents\visual studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\HERO Serial Example.pdb
+C:\Users\Hannah\Documents\Visual Studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\be\HERO Serial Example.pe
+C:\Users\Hannah\Documents\Visual Studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\be\HERO Serial Example.pdbx
+C:\Users\Hannah\Documents\Visual Studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\le\HERO Serial Example.pe
+C:\Users\Hannah\Documents\Visual Studio 2017\Projects\HERO Serial Example4\HERO Serial Example4\obj\Debug\le\HERO Serial Example.pdbx
