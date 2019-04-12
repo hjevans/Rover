@@ -1,0 +1,30 @@
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\le\Hero Simple Application1.exe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\be\Hero Simple Application1.exe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\le\Hero Simple Application1.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\be\Hero Simple Application1.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\Hero Simple Application1.exe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\Hero Simple Application1.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\le\Hero Simple Application1.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\le\Hero Simple Application1.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\be\Hero Simple Application1.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\be\Hero Simple Application1.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\LE\CTRE.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\LE\ctre_netmf_native.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\BE\CTRE.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\BE\ctre_netmf_native.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\LE\CTRE.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\LE\ctre_netmf_native.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\BE\CTRE.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\BE\ctre_netmf_native.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\CTRE.dll
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\ctre_netmf_native.dll
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\CTRE.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\bin\Debug\ctre_netmf_native.pdb
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\Hero Simple Application1.csprojResolveAssemblyReference.cache
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\TinyCLR_DebugReferences.cache
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\be\Hero Simple Application1.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\be\Hero Simple Application1.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\le\Hero Simple Application1.pe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\le\Hero Simple Application1.pdbx
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\Hero Simple Application1.exe
+c:\users\hannah\documents\visual studio 2017\Projects\Hero Simple Application1\Hero Simple Application1\obj\Debug\Hero Simple Application1.pdb
