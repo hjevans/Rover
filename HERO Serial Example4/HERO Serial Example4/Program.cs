@@ -144,7 +144,7 @@ namespace HERO_Serial_Example4
                     //while (true)
                     {
                         //set motor to run forward until specified angle
-                        motor0.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                        //motor0.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
 
                         //_uart.Read(_rx, 0, 13);
                         //Debug.Print("BYTEs TO READ = " + _uart.BytesToRead.ToString());
@@ -181,7 +181,7 @@ namespace HERO_Serial_Example4
 
                         Debug.Print("Motor running, goal not met");
 
-                        CTRE.Phoenix.Watchdog.Feed();
+                        //CTRE.Phoenix.Watchdog.Feed();
                     }
                     Debug.Print("Motor stopped, goal met");
                 //}
@@ -344,19 +344,20 @@ namespace HERO_Serial_Example4
             {
                 //Debug.Print(readings[0]);
                 //Debug.Print(readings[1]);
-                for (int i = 1; i < stringArray.Length - 1; i++)
+                //for(int i = 1; i < stringArray.Length -1; i++)
+                for (int i = 0; i < stringArray.Length; i++)
                 {
                     Debug.Print("Raw string " + stringArray[i]);
-                    for (int l = 0; l < stringArray[i].Length; l++)
-                    {
-                        if (stringArray[i][l] == 'E')
-                        {
-                            Debug.Print("Found an E at " + stringArray[i]);
+                    //for (int l = 0; l < stringArray[i].Length; l++)
+                    //{
+                      //  if (stringArray[i][l] == 'E')
+                        //{
+                          //  Debug.Print("Found an E at " + stringArray[i]);
                             //return [9999];
-                        }
-                    }
-                    readInt[i - 1] = int.Parse(stringArray[i]);
-                    Debug.Print("Converted to int as " + readInt[i - 1].ToString());
+                        //}
+                    //}
+                    readInt[i] = int.Parse(stringArray[i]);
+                    Debug.Print("Converted to int as " + readInt[i].ToString());
                 }
             }
             return readInt;
