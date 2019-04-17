@@ -32,8 +32,8 @@ namespace Hero_Simple_Application1
             CTRE.Phoenix.MotorControl.CAN.VictorSPX motor2 = new
             CTRE.Phoenix.MotorControl.CAN.VictorSPX(2);
 
-            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor3 = new
-            CTRE.Phoenix.MotorControl.CAN.VictorSPX(3);
+            CTRE.Phoenix.MotorControl.CAN.TalonSRX motor3 = new
+            CTRE.Phoenix.MotorControl.CAN.TalonSRX(3);
 
             while (true)
             {
@@ -45,7 +45,8 @@ namespace Hero_Simple_Application1
                 {
 
                     Debug.Print("axis:" + myGamepad.GetAxis(1));
-                    motor0.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, myGamepad.GetAxis(1));
+                    motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, myGamepad.GetAxis(1) / 2);
+                    motor2.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, myGamepad.GetAxis(2) / 1.33);
                     //motor3.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 1);
                     //motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput,.5);
                     //analogRead0 = potentiometer0.Read();
