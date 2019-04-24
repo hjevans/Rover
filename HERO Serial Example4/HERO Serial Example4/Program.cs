@@ -80,6 +80,20 @@ namespace HERO_Serial_Example4
             /* loop forever */
             CTRE.Phoenix.MotorControl.CAN.VictorSPX motor1 = new
             CTRE.Phoenix.MotorControl.CAN.VictorSPX(1);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor2 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(2);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor5 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(5);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor6 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(6);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor9 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(9);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor10 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(10);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor13 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(13);
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX motor14 = new
+            CTRE.Phoenix.MotorControl.CAN.VictorSPX(14);
             while (true)
             {
                 //Debug.Print("In loop");
@@ -119,8 +133,8 @@ namespace HERO_Serial_Example4
 
                     //if (stringReadings[0] == "E" && stringReadings[3] == ";")
                     //{
-                    if (newData == true)
-                    {
+                    //if (newData == true)
+                    //{
                         intReadings = getIntReadings(stringReadings);
 
                     // intReadings = getIntReadings(stringReadings);
@@ -146,72 +160,293 @@ namespace HERO_Serial_Example4
                     //while (true)
                     bool lastPress = false;
                     bool pressed;
+                    //bool reachedLimit = false;
                     if (myGamepad.GetConnectionStatus() == CTRE.Phoenix.UsbDeviceConnection.Connected)
                     {
+                        Debug.Print("gamepad connected");
                         pressed = myGamepad.GetButton(1);
                         if (pressed != lastPress && pressed == true)
                         {
                             Debug.Print("Button pressed, Kneeling selected");
-                            while(intReadings[0] < 500)
+                            //while(reachedLimit == false)
+                            
+                            //{
+                                stringReadings = getStrReadings();
+                                intReadings = getIntReadings(stringReadings);
+                                Debug.Print("potentiometer 2 is " + intReadings[2].ToString());
+
+                        if (intReadings[0] > 440 && intReadings[0] < 460)
+                        {
+                            if (intReadings[0] < 503)
                             {
                                 motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
                                 stringReadings = getStrReadings();
                                 intReadings = getIntReadings(stringReadings);
                                 Debug.Print(intReadings[0].ToString());
                                 CTRE.Phoenix.Watchdog.Feed();
+                                //reachedLimit = false;
                             }
-                           // else
-                            //{
-                              //  lastPress = pressed;
-                            //}
+
+                            else
+                            {
+                                motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                            }
                         }
-                        lastPress = pressed; //debounce
-                                             //set motor to run forward until specified angle
-                                             //motor0.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                        // CROUCH FROM STANDING
+                        /*
+                        if (intReadings[0] < 460)
+                        {
+                            motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                            stringReadings = getStrReadings();
+                            intReadings = getIntReadings(stringReadings);
+                            Debug.Print(intReadings[0].ToString());
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
 
-                        //_uart.Read(_rx, 0, 13);
-                        //Debug.Print("BYTEs TO READ = " + _uart.BytesToRead.ToString());
-                        //System.Threading.Thread.Sleep(10);
-                        //if (_rx != null)
+                        else
+                        {
+                            motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[1] < 2752)
+                        {
+                            motor2.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor2.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+
+
+                        if (intReadings[2] < 2400)
+                        {
+                            //motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                            motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.50);
+
+                            Debug.Print("Moving Elbow " + intReadings[2].ToString());
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            Debug.Print("Elbow not moving " + intReadings[2].ToString());
+                            motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[3] > 1358)
+                        {
+                            motor6.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                            Debug.Print("Moving wrist " + intReadings[3].ToString());
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor6.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                            Debug.Print("Wrist not moving " + intReadings[3].ToString());
+                        }
+
+
+                        if (intReadings[6] < 2642)
+                        {
+                            motor9.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                            stringReadings = getStrReadings();
+                            intReadings = getIntReadings(stringReadings);
+                            Debug.Print(intReadings[0].ToString());
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor9.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[7] < 768)
+                        {
+                            motor10.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor10.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+
+
+                        if (intReadings[4] > 897)
+                        {
+                            motor13.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                            stringReadings = getStrReadings();
+                            intReadings = getIntReadings(stringReadings);
+                            Debug.Print(intReadings[0].ToString());
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor13.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[5] < 1380)
+                        {
+                            motor14.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .40);
+                            CTRE.Phoenix.Watchdog.Feed();
+                            //reachedLimit = false;
+                        }
+                        else
+                        {
+                            motor14.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        */
+                        // MOVE ALL LEGS TO KNEELING SIMULTANEOUSLY
+                        /*
+                                if (intReadings[0] < 510)
+                                {
+                                    motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                                    stringReadings = getStrReadings();
+                                    intReadings = getIntReadings(stringReadings);
+                                    Debug.Print(intReadings[0].ToString());
+                                    CTRE.Phoenix.Watchdog.Feed();
+                                    //reachedLimit = false;
+                                }
+                                
+                                else
+                                {
+                                    motor1.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                                }
+                                if (intReadings[1] < 2750)
+                                {
+                                    motor2.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                                    CTRE.Phoenix.Watchdog.Feed();
+                                    //reachedLimit = false;
+                                }
+                                else
+                                {
+                                    motor2.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                                }
+                                
+                                
+                        if (intReadings[2] < 2440)
+                        {
+                          //motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                          motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.50);
+
+                            Debug.Print("Moving Elbow " + intReadings[2].ToString());
+                        CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          Debug.Print("Elbow not moving " + intReadings[2].ToString());
+                        motor5.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[3] > 1351)
+                        {
+                           motor6.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                          Debug.Print("Moving wrist " + intReadings[3].ToString());
+                         CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          motor6.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                         Debug.Print("Wrist not moving " + intReadings[3].ToString());
+                        }
+                        
+                        
+                        if (intReadings[6] < 2699)
+                        {
+                          motor9.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                          stringReadings = getStrReadings();
+                          intReadings = getIntReadings(stringReadings);
+                          Debug.Print(intReadings[0].ToString());
+                          CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          motor9.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[7] < 770)
+                        {
+                          motor10.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, -.25);
+                        CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          motor10.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        
+                        
+                        if (intReadings[4] > 841)
+                        {
+                           motor13.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+                        stringReadings = getStrReadings();
+                        intReadings = getIntReadings(stringReadings);
+                        Debug.Print(intReadings[0].ToString());
+                        CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          motor13.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        if (intReadings[5] < 1382)
+                        {
+                          motor14.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .40);
+                         CTRE.Phoenix.Watchdog.Feed();
+                        //reachedLimit = false;
+                        }
+                        else
+                        {
+                          motor14.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, 0);
+                        }
+                        */
+                        //if (intReadings[0] > 510 && intReadings[1] > 2750 && intReadings[2] > 2314 && intReadings[3] > 1346 && intReadings[4] > 892 && intReadings[5] > 1374 && intReadings[6] > 2433 && intReadings[7] > 765)
+                        //if (intReadings[2] > 2456 && intReadings[3] < 1351)
                         //{
-                        //  stringReadings = getStrReadings();
+                        //reachedLimit = true;
                         //}
-                        //if (stringReadings[0] == "E" && stringReadings[3] == ";")
+                        //}
+                        //if (intReadings[0] > 510 && intReadings[1] > 2750)
                         //{
-                        //intReadings = getIntReadings(stringReadings);
+                        //lastPress = pressed;
                         //}
-                        //else
-                        //{
-                        //{
-                        //hard coded to most common error for now
-
-
-                        //      strCopy = stringReadings;
-                        //    stringReadings[0] = strCopy[2][1].ToString();
-                        //  Debug.Print("New index 0 " + stringReadings[0]);
-                        //stringReadings[1] = strCopy[3] + strCopy[0];
-                        //Debug.Print("New index 1 " + stringReadings[1]);
-                        //stringReadings[2] = strCopy[1];
-                        //Debug.Print("New index 2 " + stringReadings[2]);
-                        //stringReadings[3] = strCopy[2][0].ToString();
-                        //Debug.Print("New index 3 " + stringReadings[3]);
-
-                        //intReadings = getIntReadings(stringReadings);
-                        //}
-
-                        //}
-
-
-                        Debug.Print("Motor running, goal not met");
-
-                        //CTRE.Phoenix.Watchdog.Feed();
                     }
-                    Debug.Print("Motor stopped, goal met");
+                    //if (intReadings[0] > 510 && intReadings[1] > 2750)
+                    //{
+                      //  lastPress = pressed;
+                    //}
+                    //lastPress = pressed; //debounce
+                    //set motor to run forward until specified angle
+                    //motor0.Set(CTRE.Phoenix.MotorControl.ControlMode.PercentOutput, .25);
+
+                    //_uart.Read(_rx, 0, 13);
+                    //Debug.Print("BYTEs TO READ = " + _uart.BytesToRead.ToString());
+                    //System.Threading.Thread.Sleep(10);
+                    //if (1_rx != null)
+                    //{
+                    //  stringReadings = getStrReadings();
+                    //}
+                    //if (stringReadings[0] == "E" && stringReadings[3] == ";")
+                    //{
+                    //intReadings = getIntReadings(stringReadings);
+                    //}
+
+
+                    //}
+
+
+                    //Debug.Print("Motor running, goal not met");
+
+                    //CTRE.Phoenix.Watchdog.Feed();
+                }
+                    //Debug.Print("Motor stopped, goal met");
                 //}
 
                     /* wait a bit, keep the main loop time constant, this way you can add to this example (motor control for example). */
                     System.Threading.Thread.Sleep(10);
-                }
+                //}
             }
         }
 
@@ -294,7 +529,7 @@ namespace HERO_Serial_Example4
                 {
                     recvInProgress = true;
                 }
-                if (ndx < 11)
+                if (ndx < 41)
                 {
                     newData = false;
                     //recvInProgress = false;
@@ -383,7 +618,7 @@ namespace HERO_Serial_Example4
         private static int[] getIntReadings(string[] stringArray)
         {
             // parsing operations to convert string readings to usable int values
-            int[] readInt = new int[2];
+            int[] readInt = new int[8];
             //Debug.Print(str);
 
             //else

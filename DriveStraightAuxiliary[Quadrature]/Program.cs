@@ -171,10 +171,10 @@ namespace DriveStraightAuxiliary
 						Debug.Print("This is basic Arcade Drive with Arbitrary Feed-forward.\n");
 
 					/* Use Arbitrary FeedForward to create an Arcade Drive Control by modifying the forward output */
-					Hardware._rightFrontTalon.Set(ControlMode.PercentOutput, forward / 2, DemandType.ArbitraryFeedForward, -turn / 2);
-					Hardware._leftFrontTalon.Set(ControlMode.PercentOutput, forward / 2, DemandType.ArbitraryFeedForward, +turn / 2);
-					Hardware._rightBackTalon.Set(ControlMode.PercentOutput, forward / 2, DemandType.ArbitraryFeedForward, -turn / 2);
-					Hardware._leftBackTalon.Set(ControlMode.PercentOutput, forward / 2, DemandType.ArbitraryFeedForward, +turn / 2);
+					Hardware._rightFrontTalon.Set(ControlMode.PercentOutput, forward, DemandType.ArbitraryFeedForward, -turn / 2);
+					Hardware._leftFrontTalon.Set(ControlMode.PercentOutput, forward, DemandType.ArbitraryFeedForward, +turn / 2);
+					Hardware._rightBackTalon.Set(ControlMode.PercentOutput, forward, DemandType.ArbitraryFeedForward, -turn / 2);
+					Hardware._leftBackTalon.Set(ControlMode.PercentOutput, -forward, DemandType.ArbitraryFeedForward, +turn / 2);
 				}
 				
 			//}
