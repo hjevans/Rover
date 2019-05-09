@@ -409,7 +409,7 @@ namespace HERO_Serial_Example4
             }
             return false;
         }
-        // 770-855-7940 Mike Franklin
+        
         public static bool lower(int leg, int[] readings, ref bool eGoalReached, ref bool wGoalReached)
         {
             int elbow = leg * 4 + 1;
